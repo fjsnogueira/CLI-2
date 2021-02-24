@@ -25,7 +25,11 @@
             <url>~/.m2</url>
         </repository>
     </repositories>
-
+<pluginRepositories>
+   <pluginRepository>
+        <id>onejar-maven-plugin.googlecode.com</id>
+        <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
+   </pluginRepository>
     <properties>
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
@@ -56,6 +60,22 @@
             </resource>
         </resources>
         <plugins>
+                 <plugin>
+    <groupid>org.dstovall</groupid>
+    <artifactid>onejar-maven-plugin</artifactid>
+    <version>1.4.4</version>
+    <executions>
+        <execution>
+            <configuration>
+                <onejarversion>0.97</onejarversion>
+                <classifier>onejar</classifier>
+            </configuration>
+            <goals>
+                <goal>one-jar</goal>
+            </goals>
+        </execution>
+   </executions>
+</plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
