@@ -24,27 +24,12 @@
             <outputDirectory>config</outputDirectory>
         </file>
         <file>
-            <source>log4j2.xml</source>
+            <source>target/classes/log4j2.xml</source>
+            <outputDirectory>./.</outputDirectory>
+        </file>
+        <file>
+            <source>target/CxConsolePlugin-${version}.jar</source>
             <outputDirectory>./.</outputDirectory>
         </file>
     </files>
-
-    <dependencySets>
-        <dependencySet>
-            <outputDirectory>lib</outputDirectory>
-            <includes>
-                <include>*</include>
-            </includes>
-            <useProjectArtifact>false</useProjectArtifact>
-        </dependencySet>
-        <dependencySet>
-            <outputDirectory>/</outputDirectory>
-            <includes>
-                <include>${groupId}:${artifactId}*</include>
-            </includes>
-            <useProjectArtifact>true</useProjectArtifact>
-            <outputFileNameMapping>CxConsolePlugin-CLI-${version}.jar</outputFileNameMapping>
-        </dependencySet>
-    </dependencySets>
-
 </assembly>
